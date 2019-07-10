@@ -43,9 +43,9 @@ function addMetrics(order: OrderPlacedData) {
     'order',
     {
       order_id: order.transactionId,
-      amount: order.transactionTotal,
-      state: order.visitorState,
-      country: order.visitorCountry,
+      amount: order.transactionSubtotal,
+      state: order.visitorAddressState,
+      country: order.visitorAddressCountry,
       tax: order.transactionTax,
       shipping: order.transactionShipping,
       currency: order.currency,

@@ -27,15 +27,18 @@ export interface Order {
   orderGroup: string
   salesChannel: string
   coupon: string
-  visitorCountry: string
-  visitorState: string
   visitorType: string
   visitorContactInfo: string[]
+  visitorAddressState: string
+  visitorAddressCountry: string
+  visitorAddressPostalCode: string
   transactionId: string
   transactionDate: string
   transactionAffiliation: string
   transactionTotal: number
   transactionShipping: number
+  transactionSubtotal: number
+  transactionDiscounts: number
   transactionTax: number
   transactionCurrency: string
   transactionPaymentType: PaymentType[]
@@ -72,6 +75,7 @@ interface ProductOrder {
   categoryId: string
   categoryTree: string[]
   categoryIdTree: string[]
+  priceTags: PriceTag[]
   originalPrice: number
   price: number
   sellingPrice: number
@@ -80,4 +84,10 @@ interface ProductOrder {
   components: any[]
   measurementUnit: string
   unitMultiplier: number
+}
+
+interface PriceTag {
+  identifier: string
+  isPercentual: boolean
+  value: number
 }
